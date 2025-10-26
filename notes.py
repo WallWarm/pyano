@@ -18,6 +18,7 @@ k5 = "I 9 O 0 P [ = ] ; ' \ /"
 octave3 = k3.split()
 octave4 = k4.split() 
 octave5 = k5.split()
+fullboard = octave3 + octave4 + octave5 +['`']
 
 allwhites = "Z X C V B N M Q W E R T Y U I O P [ ] ' / `"
 allblacks = "S D G H J 2 3 5 6 7 9 0 = ; \ "
@@ -31,3 +32,6 @@ all5 = all3.replace('3', '5')
 a = all3 + all4 + all5 + 'C6'
 allnotes = a.split()
 print(allnotes)
+
+#all notes - all the individual piano notes in order
+#fullbaord - all the individual keyboard notes in order
