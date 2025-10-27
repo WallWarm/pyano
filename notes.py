@@ -14,17 +14,18 @@ print(len(blacknotes)) #15
 
 k3 = 'Z S X D C V G B H N J M'
 k4 = 'Q 2 W 3 E R 5 T 6 Y 7 U'
-k5 = "I 9 O 0 P [ = ] ; ' \ /"
+k5 = "I 9 O 0 P [ = ] ; ' > /"
 octave3 = k3.split()
 octave4 = k4.split() 
 octave5 = k5.split()
 fullboard = octave3 + octave4 + octave5 +['`']
 
 allwhites = "Z X C V B N M Q W E R T Y U I O P [ ] ' / `"
-allblacks = "S D G H J 2 3 5 6 7 9 0 = ; \ "
+allblacks = "S D G H J 2 3 5 6 7 9 0 = ; > "
 wboard = allwhites.split()
 bboard = allblacks.split()
-
+print(len(wboard)) #22
+print(len(bboard)) #15
 
 all3 = 'C3 C#3 D3 D#3 E3 F3 F#3 G3 G#3 A3 A#3 B3 '
 all4 = all3.replace('3', '4')

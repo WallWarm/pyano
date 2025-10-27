@@ -1,9 +1,9 @@
 import pygame
-import display as d
 from pygame import mixer
 
 
 pygame.init()
+import display as d
 pygame.mixer.init()
 width = 1500
 height = 720
@@ -14,6 +14,7 @@ run = True
 while run:
     screen.fill('gray')
     d.disp()
+    d.highlight()
     pygame.display.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
