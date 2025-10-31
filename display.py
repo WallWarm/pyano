@@ -18,11 +18,11 @@ def disp():
             screen, "black", [145 + ((i + 1) * 50), height - 400, 50, 300], 2, 4
         )
 
-        text = wfont.render(n.whitenotes[i], True, (225, 0, 0))
+        text = wfont.render(n.whitenotes[i], True, (0, 0, 0))
         box = text.get_rect(center=(220 + shift, 550))
         screen.blit(text, box)
 
-        text = wfont.render(n.wboard[i], True, (0, 0, 0))
+        text = wfont.render(n.wboard[i], True, (225, 0, 0))
         box = text.get_rect(center=(220 + shift, 585))
         screen.blit(text, box)
         shift += 50
@@ -40,9 +40,7 @@ def disp():
         screen.blit(text, box)
         j += 1
 
-
-def highlight():
-    wbkeys = [
+wbkeys = [
         pygame.K_z,
         pygame.K_x,
         pygame.K_c,
@@ -67,7 +65,7 @@ def highlight():
         pygame.KSCAN_GRAVE,
     ]
 
-    bbkeys = [
+bbkeys = [
         pygame.K_s,
         pygame.K_d,
         pygame.K_g,
@@ -85,16 +83,30 @@ def highlight():
         pygame.K_GREATER,
     ]
 
-    dwbkeys = dict.fromkeys(wbkeys)
-    dwbkeys = {key: [145 + ((i) * 50), height - 400, 50, 300] for (i, key) in enumerate(dwbkeys, 1)}
-    dbbkeys = dict.fromkeys(bbkeys)
-    dbbkeys = {key: [145 + ((i) * 50), height - 400, 50, 300] for (i, key) in enumerate(dbbkeys, 1)}
-    def highlight():
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                wcoords = dwbkeys.get(event.key)
-                bcoords = dbbkeys.get(event.key)
-                if wcoords is not None:
-                    pygame.draw.rect(screen, "green", wcoords, 2, 4)
-                if bcoords is not None:
-                    pygame.draw.rect(screen, "green", bcoords, 2, 4)
+dwbkeys = dict.fromkeys(wbkeys)
+dwbkeys = {key: [145 + ((i) * 50), height - 400, 50, 300] for (i, key) in enumerate(dwbkeys, 1)}
+dbbkeys = dict.fromkeys(bbkeys)
+dbbkeys = {key: [175 + ((i) * 50), height - 400, 40, 200] for (i, key) in enumerate(dbbkeys, 1)}
+
+
+
+(1, 2, 4, 5, 6, 8, 9, 11, 12, 13, 15, 16, 18, 19, 20)
+
+dbbkeys = {115: [225, 320, 40, 200], 100: [275, 320, 40, 200], 103: [325, 320, 40, 200], 104: [375, 320, 40, 200], 106: [425, 320, 40, 200], 50: [475, 320, 40, 200], 51: [525, 320, 40, 200], 53: [575, 320, 40, 200], 54: [625, 320, 40, 200], 55: [675, 320, 40, 200], 57: [725, 320, 40, 200], 48: [775, 320, 40, 200], 61: [825, 320, 40, 200], 59: [875, 320, 40, 200], 62: [925, 320, 40, 200]}
+
+
+def highlight():
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            wcoords = dwbkeys.get(event.key)
+            bcoords = dbbkeys.get(event.key)
+            if wcoords is not None:
+                pygame.draw.rect(screen, "green", wcoords, 4, 4)
+                if event.type == pygame.KEYUP:
+                    pygame.draw.rect(screen, "black", bcoords, 2, 4)
+            if bcoords is not None:
+                pygame.draw.rect(screen, "green", bcoords, 4, 4)
+                if event.type == pygame.KEYUP:
+                    pygame.draw.rect(screen, "black", bcoords, 2, 4)
+        if event.type == pygame.MOUSEWHEEL:
+            pygame.draw.rect(screen, "green", [145 + ((1) * 50), height - 400, 50, 300], 4, 4)
