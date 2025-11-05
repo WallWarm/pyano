@@ -88,25 +88,13 @@ dwbkeys = {key: [145 + ((i) * 50), height - 400, 50, 300] for (i, key) in enumer
 dbbkeys = dict.fromkeys(bbkeys)
 dbbkeys = {key: [175 + ((i) * 50), height - 400, 40, 200] for (i, key) in enumerate(dbbkeys, 1)}
 
-
-
-(1, 2, 4, 5, 6, 8, 9, 11, 12, 13, 15, 16, 18, 19, 20)
-
-dbbkeys = {115: [225, 320, 40, 200], 100: [275, 320, 40, 200], 103: [325, 320, 40, 200], 104: [375, 320, 40, 200], 106: [425, 320, 40, 200], 50: [475, 320, 40, 200], 51: [525, 320, 40, 200], 53: [575, 320, 40, 200], 54: [625, 320, 40, 200], 55: [675, 320, 40, 200], 57: [725, 320, 40, 200], 48: [775, 320, 40, 200], 61: [825, 320, 40, 200], 59: [875, 320, 40, 200], 62: [925, 320, 40, 200]}
-
-
 def highlight():
-    for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            wcoords = dwbkeys.get(event.key)
-            bcoords = dbbkeys.get(event.key)
-            if wcoords is not None:
-                pygame.draw.rect(screen, "green", wcoords, 4, 4)
-                if event.type == pygame.KEYUP:
-                    pygame.draw.rect(screen, "black", bcoords, 2, 4)
-            if bcoords is not None:
-                pygame.draw.rect(screen, "green", bcoords, 4, 4)
-                if event.type == pygame.KEYUP:
-                    pygame.draw.rect(screen, "black", bcoords, 2, 4)
-        if event.type == pygame.MOUSEWHEEL:
-            pygame.draw.rect(screen, "green", [145 + ((1) * 50), height - 400, 50, 300], 4, 4)
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_z]:
+        pygame.draw.rect(
+            screen, "green", [145 + ((0 + 1) * 50), height - 400, 50, 300], 2, 4
+        )
+    else:
+        pygame.draw.rect(
+            screen, "black", [145 + ((0 + 1) * 50), height - 400, 50, 300], 2, 4
+        )
