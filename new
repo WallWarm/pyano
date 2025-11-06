@@ -14,9 +14,8 @@ while running:
             running = False
 
     keys = pygame.key.get_pressed()
-    screen.fill((30, 30, 30))  # Background
-
-    if keys[pygame.K_SPACE]:  # Highlight when space is held
+    if keys[pygame.K_z]:
+        screen.fill((30, 30, 30))
         pygame.draw.rect(screen, (0, 255, 0), (x, y, width, height))  # Yellow highlight
     else:
         pygame.draw.rect(screen, (0, 0, 0), (x, y, width, height))  # Normal red

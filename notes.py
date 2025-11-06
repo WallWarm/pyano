@@ -7,7 +7,7 @@ w5 = w3.replace('3','5')
 w = w3 + w4 + w5 +'C6'
 whitenotes = w.split()
 
-b3 = 'C#3 D#3 F#3 G#3 A#3 '
+b3 = 'Db3 Eb3 Gb3 Ab3 Bb3 '
 b4 = b3.replace('3','4')
 b5 = b3.replace('3','5')
 b = b3 + b4 + b5
