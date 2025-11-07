@@ -122,11 +122,11 @@ def highlight():
         keys = pygame.key.get_pressed()
         if keys[x]:
             pygame.draw.rect(
-                screen, "green", dwbkeys.get(x), 2, 4
+                screen, "red", dwbkeys.get(x), 2, 4
             )
     for y in dbbkeys.keys():
         keys = pygame.key.get_pressed()
         if keys[y]:
             pygame.draw.rect(
-                screen, "green", dbbkeys.get(y), 2, 4
+                screen, "red", dbbkeys.get(y), 2, 4
             )

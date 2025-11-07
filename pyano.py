@@ -12,12 +12,12 @@ width = 1500
 height = 720
 screen = pygame.display.set_mode([width,height])
 
-pygame.display.set_caption('PYANO')
+pygame.display.set_caption('')
 
 
 run = True
 while run:
-    screen.fill('gray')
+    screen.fill('dark blue')
     d.disp()
     d.highlight()
     s.play()
