@@ -1,6 +1,3 @@
-import display as d
-import pygame
-height = 720
 w3 = 'C3 D3 E3 F3 G3 A3 B3 '
 w4 = w3.replace('3','4')
 w5 = w3.replace('3','5')
@@ -36,31 +33,11 @@ allnotes = a.split()
 #fullbaord - all the individual keyboard notes in order
 
 #wboard - all white notes on keyboard
-#bboard - all black notesonkeyboard
+#bboard - all black notes on keyboard
 
 #whitenotes - all white piano notes
 #blacknotes - all black piano notes
 
 #wboard = whitenotes = 22
 #bboard = blacknotes = 15
-bbkeys = [
-        pygame.K_s,
-        pygame.K_d,
-        pygame.K_g,
-        pygame.K_h,
-        pygame.K_j,
-        pygame.K_2,
-        pygame.K_3,
-        pygame.K_5,
-        pygame.K_6,
-        pygame.K_7,
-        pygame.K_9,
-        pygame.K_0,
-        pygame.K_EQUALS,
-        pygame.K_SEMICOLON,
-        pygame.K_GREATER,
-    ]
 
-dbbkeys = dict.fromkeys(bbkeys)
-dbbkeys = {key: [175 + ((i) * 50), height - 400, 40, 200] for (i, key) in enumerate(dbbkeys, 1)}
-print(dbbkeys)
