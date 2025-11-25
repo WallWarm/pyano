@@ -68,9 +68,9 @@ wbkeys = [
         pygame.K_p,
         pygame.K_LEFTBRACKET,
         pygame.K_RIGHTBRACKET,
-        pygame.KSCAN_APOSTROPHE,
+        pygame.K_QUOTE,
         pygame.K_SLASH,
-        pygame.KSCAN_GRAVE,
+        pygame.K_BACKQUOTE,
     ]
 
 
@@ -121,6 +121,7 @@ def highlight():
     for x in dwbkeys.keys():
         keys = pygame.key.get_pressed()
         if keys[x]:
+            print(x, keys[x])
             pygame.draw.rect(
                 screen, "red", dwbkeys.get(x), 2, 4
             )
