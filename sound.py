@@ -4,6 +4,7 @@ import display as d
 
 pygame.mixer.init()
 
+
 pressed_last_frame = set()
 
 white_sounds = {

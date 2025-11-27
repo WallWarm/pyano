@@ -27,7 +27,7 @@ def disp():
         box = text.get_rect(center=(220 + shift, 550))
         screen.blit(text, box)
 
-        text = wfont.render(n.wboard[i], True, 'dark green')
+        text = wfont.render(n.wboard[i], True, 'deeppink4')
         box = text.get_rect(center=(220 + shift, 585))
         screen.blit(text, box)
         shift += 50
@@ -41,7 +41,7 @@ def disp():
         box = text.get_rect(center=(195 + (i + 1) * 50, 470))
         screen.blit(text, box)
 
-        text = bfont.render(n.bboard[j], True, 'light green')
+        text = bfont.render(n.bboard[j], True, 'hotpink')
         box = text.get_rect(center=(195 + (i + 1) * 50, 495))
         screen.blit(text, box)
         j += 1
@@ -122,11 +122,11 @@ def highlight():
         keys = pygame.key.get_pressed()
         if keys[x]:
             pygame.draw.rect(
-                screen, "black", dwbkeys.get(x), 2, 4
+                screen, "deeppink4", dwbkeys.get(x), 2, 4
             )
     for y in dbbkeys.keys():
         keys = pygame.key.get_pressed()
         if keys[y]:
             pygame.draw.rect(
-                screen, "white", dbbkeys.get(y), 2, 4
+                screen, "hotpink", dbbkeys.get(y), 2, 4
             )
