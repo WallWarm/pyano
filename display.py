@@ -6,7 +6,7 @@ import notes as n
 width = 1500
 height = 720
 screen = pygame.display.set_mode([width, height])
-
+pygame.font.init()
 wfont = pygame.font.SysFont("times new roman", 24)
 bfont = pygame.font.SysFont("times new roman", 20)
 
@@ -27,7 +27,7 @@ def disp():
         box = text.get_rect(center=(220 + shift, 550))
         screen.blit(text, box)
 
-        text = wfont.render(n.wboard[i], True, (225, 0, 0))
+        text = wfont.render(n.wboard[i], True, 'dark green')
         box = text.get_rect(center=(220 + shift, 585))
         screen.blit(text, box)
         shift += 50
@@ -41,7 +41,7 @@ def disp():
         box = text.get_rect(center=(195 + (i + 1) * 50, 470))
         screen.blit(text, box)
 
-        text = bfont.render(n.bboard[j], True, (255, 0, 0))
+        text = bfont.render(n.bboard[j], True, 'light green')
         box = text.get_rect(center=(195 + (i + 1) * 50, 495))
         screen.blit(text, box)
         j += 1
@@ -68,9 +68,9 @@ wbkeys = [
         pygame.K_p,
         pygame.K_LEFTBRACKET,
         pygame.K_RIGHTBRACKET,
-        pygame.KSCAN_APOSTROPHE,
+        pygame.K_QUOTEDBL,
         pygame.K_SLASH,
-        pygame.KSCAN_GRAVE,
+        pygame.K_BACKQUOTE,
     ]
 
 
@@ -90,7 +90,7 @@ bbkeys = [
         pygame.K_0,
         pygame.K_EQUALS,
         pygame.K_SEMICOLON,
-        pygame.K_GREATER,
+        pygame.K_PERIOD,
     ]
 
 
@@ -122,11 +122,11 @@ def highlight():
         keys = pygame.key.get_pressed()
         if keys[x]:
             pygame.draw.rect(
-                screen, "red", dwbkeys.get(x), 2, 4
+                screen, "black", dwbkeys.get(x), 2, 4
             )
     for y in dbbkeys.keys():
         keys = pygame.key.get_pressed()
         if keys[y]:
             pygame.draw.rect(
-                screen, "red", dbbkeys.get(y), 2, 4
+                screen, "white", dbbkeys.get(y), 2, 4
             )

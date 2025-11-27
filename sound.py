@@ -1,17 +1,37 @@
 import pygame
-import display as d
 import notes as n
-from pygame import mixer
+import display as d
+
+pygame.mixer.init()
+
+pressed_last_frame = set()
+
+white_sounds = {
+    key: pygame.mixer.Sound(n.whitenotes[i] + ".mp3")
+    for i, key in enumerate(d.wbkeys)
+}
+
+black_sounds = {
+    key: pygame.mixer.Sound(n.blacknotes[i] + ".mp3")
+    for i, key in enumerate(d.bbkeys)
+}
 
 
 def play():
-    for x in d.dwbkeys.keys():
-        keys = pygame.key.get_pressed()
-        if keys[x]:
-            note = pygame.mixer.Sound(n.whitenotes[d.wbkeys.index(x)]+'.mp3')
-            note.play(maxtime=120)
-    for y in d.dbbkeys.keys():
-        keys = pygame.key.get_pressed()
-        if keys[y]:
-            note = pygame.mixer.Sound(n.blacknotes[d.bbkeys.index(y)]+'.mp3')
-            note.play(maxtime=120)
+    global pressed_last_frame
+
+    keys = pygame.key.get_pressed()
+
+    current_pressed = {k for k in d.wbkeys if keys[k]}
+    current_pressed |= {k for k in d.bbkeys if keys[k]}
+
+    new_presses = current_pressed - pressed_last_frame
+
+    for key in new_presses:
+        if key in white_sounds:
+            white_sounds[key].play()
+        elif key in black_sounds:
+            black_sounds[key].play()
+
+    pressed_last_frame = current_pressed
+    
