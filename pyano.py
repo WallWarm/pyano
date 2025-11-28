@@ -5,7 +5,8 @@ import sound as s
 
 pygame.init()
 pygame.mixer.init()
-
+icon = pygame.image.load('finalicon.png')
+pygame.display.set_icon(icon)
 width = 1500
 height = 720
 screen = pygame.display.set_mode([width, height])
@@ -24,7 +25,7 @@ while run:
     text1 = smallfont.render('37 notes || 3 octaves', True, (225, 225, 225))
     box1 = text1.get_rect(center=(750, 250))
     screen.blit(text1, box1)
-    text1 = reallysmallfont.render('by Arnav Guntur, XIIC', True, (225, 225, 225))
+    text1 = reallysmallfont.render('created by Arnav Guntur, XIIC', True, (225, 225, 225))
     box1 = text1.get_rect(center=(750, 680))
     screen.blit(text1, box1)
     d.disp()
