@@ -35,4 +35,3 @@ def play():
             black_sounds[key].play()
 
     pressed_last_frame = current_pressed
-    

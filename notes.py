@@ -8,5 +8,5 @@ b4 = b3.replace('3', '4')
 b5 = b3.replace('3', '5')
 blacknotes = (b3 + b4 + b5).split()
 
-wboard = 'Z X C V B N M Q W E R T Y U I O P [ ] " / `'.split()
+wboard = "Z X C V B N M Q W E R T Y U I O P [ ] ' / `".split()
 bboard = "S D G H J 2 3 5 6 7 9 0 = ; .".split()
