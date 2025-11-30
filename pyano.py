@@ -16,7 +16,7 @@ font = pygame.font.SysFont("times new roman", 120)
 smallfont = pygame.font.SysFont("times new roman", 40)
 reallysmallfont = pygame.font.SysFont("times new roman", 20)
 run = True
-while run:
+while run:  
 
     screen.fill((75,11,51))
     text = font.render('PYANO', True, (225, 225, 225))
@@ -35,7 +35,5 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_PERIOD:
-                print (ascii(event.key))
 pygame.quit()
+
